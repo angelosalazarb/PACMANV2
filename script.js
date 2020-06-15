@@ -78,14 +78,12 @@ function forEach(list, fun, index=0){
 
 var crono;
 var seconds = 0;
-var minutes = 0; 
-const seg = 0
-const min = 0
-
+var minutes = 0;
 
 function crono2(){
 
-  
+
+
   crono = setInterval(
   function(){
     if (seconds == 60){
@@ -96,7 +94,7 @@ function crono2(){
       minutes = 0;
     }
     seconds = seconds + 1;
-    },1000);
+  },1000);
 }
 
 
@@ -219,8 +217,6 @@ function sketchProc(processing) {
       
       });
     });
-
- 
     
     /**
      * contrato:<textSize><num>-><?>
@@ -238,7 +234,7 @@ function sketchProc(processing) {
     var temp = processing.nf(ho,2) +":"+ processing.nf(mi,2) +":"+ processing.nf(se,2)
 
     processing.text(temp,110,500)
-    
+
     crono2();
     
     if (seconds < 10){
@@ -255,8 +251,6 @@ function sketchProc(processing) {
   
     var temp2 = mins + ":" + secs;
     processing.text(temp2,110,520)
-
- 
   }
   
 
@@ -320,24 +314,6 @@ processing.onKeyEvent = function(world, keyCode){
         }
       })
     }
-    //reinicia cuanto toca fantasma 
-    else if(MAPA[world.pacman.y][world.pacman.x - 1 ]==5 ||MAPA[world.pacman.y][world.pacman.x - 1 ]==6 || MAPA[world.pacman.y][world.pacman.x - 1 ]==7 || MAPA[world.pacman.y][world.pacman.x - 1 ]==8){
-      
-      ghostD.play()
-      ghostD.volume = 0.06;
-      MAPA[world.pacman.y][world.pacman.x] = 0
-      MAPA[21][2]==0
-
-      return  processing.state = {
-      time:world.time,
-      score:world.score,
-      pacman:{x:9,y:16,dir:"L"},
-      ghosthb:{x:1,y:1},
-      ghostho:{x:5,y:16},
-      ghosthp:{x:12,y:1},
-      ghosthr:{x:12,y:1},
-    }
-    }
     else{ //Si no ocurre ninguna de las anteriores es porque hay un bloque entonces no deja mover el pacman
       return make(world, {
         pacman:{
@@ -399,24 +375,7 @@ processing.onKeyEvent = function(world, keyCode){
         }
       })
     }
-    else if(MAPA[world.pacman.y][world.pacman.x + 1 ]==5 ||MAPA[world.pacman.y][world.pacman.x + 1 ]==6 || MAPA[world.pacman.y][world.pacman.x + 1 ]==7 || MAPA[world.pacman.y][world.pacman.x + 1 ]==8){
-      ghostD.play()
-      ghostD.volume = 0.06;
-      
-      MAPA[world.pacman.y][world.pacman.x] = 0
-      
-
-      return  processing.state = {
-      time:world.time,
-      score:world.score,
-      pacman:{x:9,y:16,dir:"L"},
-      ghosthb:{x:1,y:1},
-      ghostho:{x:5,y:16},
-      ghosthp:{x:12,y:1},
-      ghosthr:{x:12,y:1},
-      
-    }
-    }else{
+    else{
       return make(world, {
         pacman:{
           x: world.pacman.x,
@@ -443,7 +402,6 @@ processing.onKeyEvent = function(world, keyCode){
         y: world.pacman.y - 1,
         dir: "U"
       }
-     
     })
     }
     else if(MAPA[world.pacman.y - 1][world.pacman.x] == 3){
@@ -470,22 +428,7 @@ processing.onKeyEvent = function(world, keyCode){
         score: world.score = world.score + 20
       })
     }
-    else if(MAPA[world.pacman.y - 1][world.pacman.x]==5 ||MAPA[world.pacman.y - 1][world.pacman.x]==6 || MAPA[world.pacman.y - 1][world.pacman.x]==7 || MAPA[world.pacman.y - 1][world.pacman.x]==8){
-      
-      ghostD.play()
-      ghostD.volume = 0.06;
-      MAPA[world.pacman.y][world.pacman.x] = 0
-
-      return  processing.state = {
-      time:world.time,
-      score:world.score,
-      pacman:{x:9,y:16,dir:"L"},
-      ghosthb:{x:1,y:1},
-      ghostho:{x:5,y:16},
-      ghosthp:{x:12,y:1},
-      ghosthr:{x:12,y:1},
-    }
-    }else{
+    else{
       return make(world, {
         pacman:{
           x: world.pacman.x,
@@ -499,7 +442,6 @@ processing.onKeyEvent = function(world, keyCode){
   if(keyCode == processing.DOWN){
     waka.play()
     waka.volume = 0.03;
-    
 
     if(world.time % 4 !== 0 ){
       processing.image(PACMAND,world.pacman.x * BSIZE,world.pacman.y * BSIZE,22,22);
@@ -541,22 +483,7 @@ processing.onKeyEvent = function(world, keyCode){
         score: world.score = world.score + 20
       })
     }
-    else if(MAPA[world.pacman.y + 1][world.pacman.x]==5 ||MAPA[world.pacman.y + 1][world.pacman.x]==6 || MAPA[world.pacman.y + 1][world.pacman.x]==7 || MAPA[world.pacman.y + 1][world.pacman.x]==8){
-      
-      ghostD.play()
-      ghostD.volume = 0.06;
-      MAPA[world.pacman.y][world.pacman.x] = 0
-
-      return  processing.state = {
-      time:world.time,
-      score:world.score,
-      pacman:{x:9,y:16,dir:"L"},
-      ghosthb:{x:1,y:1},
-      ghostho:{x:5,y:16},
-      ghosthp:{x:12,y:1},
-      ghosthr:{x:12,y:1},
-    }
-    }else{
+    else{
       return make(world, {
         pacman:{
           x: world.pacman.x,

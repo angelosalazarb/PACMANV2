@@ -1,0 +1,74 @@
+
+.texto {
+        font-family: 'Press Start 2P', cursive;
+        font-size: small;
+
+        color: #FFFFFF
+      }
+
+.pac{
+	font-size: 90px;
+	text-align: center;
+	width: 600px;
+	margin: auto;
+	padding: 30px 10px;
+}
+
+html {
+  background-color: transparent;
+  background: url(https://media.giphy.com/media/RHIKETUlUINYvV7CAO/giphy.gif);
+  background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+}
+
+
+ #comojugar {
+ background-image: url(https://media.giphy.com/media/RHIKETUlUINYvV7CAO/giphy.gif);
+ background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+ }
+
+#separar {
+  padding: 3%;
+  display: inline-block;
+}
+.boton4 {
+  color: rgb(255, 255, 255) !important;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: #ffffff00;
+  border: 3px solid;
+  border-color: #fbff04;
+  position: relative;
+
+}
+.boton4:hover {
+  color: rgb(255, 255, 255) !important;
+  box-shadow: 0 6px 20px rgb(250, 250, 250);
+  transition: all 0.1s ease;
+}
+
+.boton5 {
+  color: rgb(255, 255, 255) !important;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: #ffffff00;
+  border: 3px solid;
+  border-color: #fbff04;
+  position: relative;
+
+}
+.boton5:hover {
+  color: rgb(255, 255, 255) !important;
+  box-shadow: 0 6px 20px rgb(250, 250, 250);
+  transition: all 0.1s ease;
+}
+
+
+
