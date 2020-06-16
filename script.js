@@ -80,9 +80,11 @@ var crono;
 var seconds = 0;
 var minutes = 0;
 
-function crono2(){
-
-
+/**
+ * Contract: <stopwatch><> --><>
+ * Purpose: Es una función que crea un cronómetro para contar el tiempo de juego
+ */
+function stopwatch(){
 
   crono = setInterval(
   function(){
@@ -131,6 +133,7 @@ function sketchProc(processing) {
       ghostho:{x:5,y:16},
       ghosthp:{x:12,y:1},
       ghosthr:{x:12,y:1},
+      stopw:{min:0, secs:0}
     }
   }
 /**
@@ -235,25 +238,26 @@ function sketchProc(processing) {
 
     processing.text(temp,110,500)
 
-    crono2();
-    
-    if (seconds < 10){
+   if(world.time == 0){
+      return stopwatch();
+   }
+      if (seconds < 10){
       var secs = "0" + seconds;
-    }
-    else{
+      }
+      else{
       var secs = seconds;
-    }
-    if(minutes < 10){
+      }
+      if(minutes < 10){
       var mins =  "0" + minutes;
-    }else{
+      }else{
       var mins = minutes;
-    }
+      }
   
-    var temp2 = mins + ":" + secs;
-    processing.text(temp2,110,520)
+      var temp2 = mins + ":" + secs;
+      processing.text(temp2,110,520)
+    
   }
   
-
 
 /**
 * Contrato: <.onKeyEvent> <world> <keyCode> ---> <make>
@@ -500,9 +504,11 @@ processing.onKeyEvent = function(world, keyCode){
   /**
    * Cambia la posición del objeto moviendolo 1 unidad a la derecha. 
    */
-  processing.onTic = function(world) {
+  processing.onTic = function(world){
+    console.log(world.time)
     return make(world, { time: world.time + 1 , 
-    pacman: { x: world.pacman.x, y: world.pacman.y  } });
+    pacman: { x: world.pacman.x, y: world.pacman.y  }
+    });
   }
 
   processing.onMouseEvent = function (world, event) {
